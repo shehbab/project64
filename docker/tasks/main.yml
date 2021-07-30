@@ -16,7 +16,7 @@
     - name: Build an image and push
       docker_image:
         build:
-          path: /nginx
+          path: Dockerfile
         name: nginx
         force_source: yes
         push: yes
