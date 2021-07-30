@@ -1,4 +1,6 @@
 ---
+vars:
+  nginx_port: 8080
 - name: Create nginx container
   docker_container:
   name: nginx      
