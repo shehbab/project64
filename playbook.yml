@@ -1,0 +1,9 @@
+---
+- hosts: server.example.com
+  gather_facts: no
+  remote_user: shehbab
+  become: yes
+  roles:
+  - docker
+  
+  
