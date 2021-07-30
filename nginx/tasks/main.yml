@@ -16,9 +16,8 @@
     - name: Build an image and push
       docker_image:
         build:
-          path: ./nginx
-        name: inderpreetaps/nginx
-        tag: v1
+          path: /nginx
+        name: nginx
         force_source: yes
         push: yes
         source: build
