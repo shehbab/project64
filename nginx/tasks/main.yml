@@ -1,0 +1,9 @@
+---
+- name: Create nginx container
+  docker_container:
+  name: nginx      
+  image: nginx:latest
+  state: started
+  recreate: yes
+  published_ports:
+  - "{{ nginx_port }}:{{ nginx_port }}"
