@@ -1,0 +1,11 @@
+---
+- name: Install docker and some dependencies  
+  apt:
+    name: logrotate
+    state: present
+    
+- blockinfile:
+  path: "/etc/logrotate.d/{{ item.path }}"
+  block: "{{ item.conf }}"
+  create: true
+  loop: "{{ lp_logrotate_confd }}"
