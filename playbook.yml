@@ -1,5 +1,5 @@
 ---
-- hosts: server.example.com
+- hosts: server1.example.com
   gather_facts: no
   remote_user: shehbab
   become: yes
