@@ -13,7 +13,7 @@ services:
         image: pythonFlask
         container_name: app_server
         volumes:
-          - app:/usr/src/python/files
+          - app:/usr/
         net: bridgeNet
 
     web_server:
