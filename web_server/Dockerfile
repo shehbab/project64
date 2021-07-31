@@ -15,8 +15,8 @@ RUN rm -v /etc/nginx/nginx.conf
 
 # Copy a configuration file from the current directory
 COPY ./nginx.conf /etc/nginx/
-COPY domain.key /etc/nginx/
-COPY domain.crt /etc/nginx/
+COPY server.key /etc/nginx/
+COPY server.crt /etc/nginx/
 
 
 # volume used to keep logs
