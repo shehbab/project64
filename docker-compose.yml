@@ -1,0 +1,25 @@
+db_server:
+  restart: always
+  image: postgres
+  container_name: db_server
+  volumes:
+    - /data/redmine/db:/var/lib/postgresql/data
+  net: bridgeNet
+
+app_server:
+  restart: always
+  image: redmine
+  container_name: app_server
+  volumes:
+    - /data/redmine/app/files:/usr/src/redmine/files
+  net: bridgeNet
+
+web_server:
+  restart: always
+  image: nginx
+  container_name: web_server
+  ports:
+    - "80:80"
+  volumes:
+    - /data/redmine/web/log:/var/log/nginx
+  net: bridgeNet
