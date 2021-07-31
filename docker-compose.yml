@@ -3,15 +3,15 @@ db_server:
   image: postgres
   container_name: db_server
   volumes:
-    - /data/redmine/db:/var/lib/postgresql/data
+    - /data/postgresql/db:/var/lib/postgresql/data
   net: bridgeNet
 
 app_server:
   restart: always
-  image: redmine
+  image: pythonFlask
   container_name: app_server
   volumes:
-    - /data/redmine/app/files:/usr/src/redmine/files
+    - /data/python/app/files:/usr/src/python/files
   net: bridgeNet
 
 web_server:
@@ -21,5 +21,5 @@ web_server:
   ports:
     - "443:443"
   volumes:
-    - /data/redmine/web/log:/var/log/nginx
+    - /data/nginx/log:/var/log/nginx
   net: bridgeNet
