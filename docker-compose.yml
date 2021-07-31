@@ -1,25 +1,33 @@
-db_server:
-  restart: always
-  image: postgres
-  container_name: db_server
-  volumes:
-    - /data/postgresql/db:/var/lib/postgresql/data
-  net: bridgeNet
+version: '3'
+services:
+    db_server:
+        restart: always
+        image: postgres
+        container_name: db_server
+        volumes:
+          - db:/var/lib/postgresql/data
+        net: bridgeNet
 
-app_server:
-  restart: always
-  image: pythonFlask
-  container_name: app_server
-  volumes:
-    - /data/python/app/files:/usr/src/python/files
-  net: bridgeNet
+    app_server:
+        restart: always
+        image: pythonFlask
+        container_name: app_server
+        volumes:
+          - app:/usr/src/python/files
+        net: bridgeNet
 
-web_server:
-  restart: always
-  image: nginx
-  container_name: web_server
-  ports:
-    - "443:443"
-  volumes:
-    - /data/nginx/log:/var/log/nginx
-  net: bridgeNet
+    web_server:
+        restart: always
+        image: nginx
+        container_name: web_server
+        ports:
+          - "443:443"
+        volumes:
+          - web:/var/log/nginx
+        net: bridgeNet
+
+volumes:
+      db:
+     app:
+     web:
+     
