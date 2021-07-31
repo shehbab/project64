@@ -1,5 +1,5 @@
 FROM python:latest
-WORKDIR /
+WORKDIR /script/
 ADD requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 COPY app.py app.py
