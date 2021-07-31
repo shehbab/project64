@@ -1,5 +1,2 @@
-
-
-
-helm install --name shehbab-nginx .
-helm list
+#helm install --name shehbab-nginx .
+#helm list
