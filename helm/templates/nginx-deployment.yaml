@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: shehbab-nginx
+  name: {{ .Values.name }}
 spec:
   selector:
     matchLabels:
-      run: shehbab-nginx
+      run: {{ .Values.name }}
   replicas: {{ .Values.replicaCount }}
   template:
     metadata:
       labels:
-        run: shehbab-nginx
+        run: {{ .Values.name }}
     spec:
       containers:
-      - name: shehbab-nginx
+      - name: {{ .Values.name }}
         image: nginx
         ports:
-        - containerPort: 80
+        - containerPort: {{ .Values.port }}
